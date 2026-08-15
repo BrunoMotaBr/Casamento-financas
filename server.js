@@ -28,7 +28,7 @@ const pool = new Pool({
   // password: process.env.DB_PASSWORD || '',
   
   // Configurações de SSL (necessário para alguns provedores cloud)
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+  ssl: "development",
   
   // Pool settings
   max: 10,
