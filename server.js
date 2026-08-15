@@ -17,7 +17,7 @@ const PORT = 3000;
 
 // TODO: Configure suas credenciais no arquivo .env
 const pool = new Pool({
-  connectionString: "postgresql://postgres:QFFcPTKooOUIoT3I@db.qarxsxcyfrysohdzilzu.supabase.co:5432/postgres",
+  connectionString: process.env.DATABASE_URL || "postgresql://postgres:QFFcPTKooOUIoT3I@db.qarxsxcyfrysohdzilzu.supabase.co:5432/postgres",
   ssl: {
     rejectUnauthorized: false // Necessário para conexões externas como Supabase/Heroku
   },
