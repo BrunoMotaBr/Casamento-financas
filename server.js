@@ -17,20 +17,10 @@ const PORT = 5432;
 
 // TODO: Configure suas credenciais no arquivo .env
 const pool = new Pool({
-  // Opção 1: Usar DATABASE_URL (comum em produção/Heroku/Railway/Render)
   connectionString: "postgresql://postgres:QFFcPTKooOUIoT3I@db.qarxsxcyfrysohdzilzu.supabase.co:5432/postgres",
-  
-  // Opção 2: Usar variáveis separadas (descomente se preferir)
-  // host: process.env.DB_HOST || 'localhost',
-  // port: process.env.DB_PORT || 5432,
-  // database: process.env.DB_NAME || 'casamento_db',
-  // user: process.env.DB_USER || 'postgres',
-  // password: process.env.DB_PASSWORD || '',
-  
-  // Configurações de SSL (necessário para alguns provedores cloud)
-  ssl: "development",
-  
-  // Pool settings
+  ssl: {
+    rejectUnauthorized: false // Necessário para conexões externas como Supabase/Heroku
+  },
   max: 10,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
