@@ -9,7 +9,7 @@ const { Pool } = require('pg');
 const path = require('path');
 
 const app = express();
-const PORT = 5432;
+const PORT = 3000;
 
 // ============================================
 // CONFIGURAÇÃO DO POSTGRESQL
