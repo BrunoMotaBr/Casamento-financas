@@ -9,7 +9,7 @@ const { Pool } = require('pg');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 5432;
 
 // ============================================
 // CONFIGURAÇÃO DO POSTGRESQL
@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000;
 // TODO: Configure suas credenciais no arquivo .env
 const pool = new Pool({
   // Opção 1: Usar DATABASE_URL (comum em produção/Heroku/Railway/Render)
-  connectionString: process.env.DATABASE_URL,
+  connectionString: "postgresql://postgres:QFFcPTKooOUIoT3I@db.qarxsxcyfrysohdzilzu.supabase.co:5432/postgres",
   
   // Opção 2: Usar variáveis separadas (descomente se preferir)
   // host: process.env.DB_HOST || 'localhost',
